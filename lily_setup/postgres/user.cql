@@ -1,13 +1,13 @@
 DROP TABLE IF EXISTS users;
 
 CREATE TABLE users (
-    userId INT PRIMARY KEY NOT NULL,
-    fname CHAR(50) NOT NULL,
-    lname CHAR(50),
-    email CHAR(50) NOT NULL,
-    password TEXT NOT NULL,
-    createdAt timestamptz NOT NULL,
-    updatedAt timestamptz NOT NULL
+    userId serial PRIMARY KEY,
+    fname TEXT NOT NULL,
+    lname TEXT,
+    email TEXT NOT NULL,
+    pwd TEXT NOT NULL,
+    createdAt timestamptz DEFAULT CURRENT_TIMESTAMP,
+    updatedAt timestamptz DEFAULT CURRENT_TIMESTAMP
 );
 
 TRUNCATE TABLE users;

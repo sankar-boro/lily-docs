@@ -2,11 +2,9 @@ use sankar;
 DROP TABLE IF EXISTS usercategories;
 DROP TABLE IF EXISTS allcategories;
 CREATE TABLE usercategories (
-    authorId timeuuid,
-    category varchar,
-    createdAt timeuuid,
-    updatedAt timeuuid,
-    PRIMARY KEY (authorId, category)
+    authorId int,
+    category varchar
+    PRIMARY KEY (authorId)
 );
 CREATE TABLE allcategories (
     category varchar,
