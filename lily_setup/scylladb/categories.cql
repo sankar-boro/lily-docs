@@ -3,8 +3,10 @@ DROP TABLE IF EXISTS usercategories;
 DROP TABLE IF EXISTS allcategories;
 CREATE TABLE usercategories (
     authorId int,
-    category varchar
-    PRIMARY KEY (authorId)
+    category varchar,
+    createdAt timeuuid,
+    updatedAt timeuuid,
+    PRIMARY KEY (authorId, category)
 );
 CREATE TABLE allcategories (
     category varchar,
