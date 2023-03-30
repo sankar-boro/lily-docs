@@ -27,3 +27,4 @@ INSERT INTO sankar.allcategories (category, division) VALUES('social science', '
 
 
 TRUNCATE TABLE sankar.usercategories;
+TRUNCATE TABLE sankar.allcategories;
