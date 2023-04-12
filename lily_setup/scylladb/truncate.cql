@@ -11,3 +11,6 @@ TRUNCATE TABLE blogs;
 TRUNCATE TABLE blog;
 TRUNCATE TABLE userblogs;
 TRUNCATE TABLE categoryblogs;
+
+TRUNCATE TABLE users;
+TRUNCATE TABLE userCredentials;

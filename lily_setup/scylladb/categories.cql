@@ -10,8 +10,10 @@ CREATE TABLE usercategories (
 );
 CREATE TABLE allcategories (
     category varchar,
-    division varchar,
-    PRIMARY KEY (category, division)
+    authorId varchar,
+    createdAt timeuuid,
+    updatedAt timeuuid,
+    PRIMARY KEY (category)
 );
 INSERT INTO sankar.allcategories (category, division) VALUES('science', 'demo');
 INSERT INTO sankar.allcategories (category, division) VALUES('physics', 'demo');
