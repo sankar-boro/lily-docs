@@ -11,3 +11,14 @@ CREATE TABLE users (
 );
 
 TRUNCATE TABLE users;
+
+
+ALTER TABLE users ADD COLUMN uname tsvector;
+UPDATE users SET uname = to_tsvector(fname || ' ' || lname);
+CREATE INDEX uname_idx ON users USING GIN (uname);
+
+\d users; 
+
+SELECT fname, lname
+FROM users
+WHERE uname @@ plainto_tsquery('boro');

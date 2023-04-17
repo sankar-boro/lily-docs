@@ -1,14 +1,4 @@
-### Delete an index
 
-```
-curl \
-  -X DELETE 'http://localhost:7700/indexes/categories' \
-  -H 'Authorization: Bearer authUser'
-
-curl \
-  -X DELETE 'http://localhost:7700/indexes/test' \
-  -H 'Authorization: Bearer authUser'
-```
 
 ### Stats 
 ```
@@ -26,18 +16,6 @@ curl \
   --data-binary '{ "q": "test" }'
 ```
 
-### Create index
-```
-curl \
-  -X POST 'http://localhost:7700/indexes' \
-  -H 'Content-Type: application/json' \
-  -H 'Authorization: Bearer authUser' \
-  --data-binary '{
-    "uid": "books",
-    "primaryKey": null
-  }'
-```
-
 ### Health
 ```
 curl \
@@ -50,7 +28,7 @@ curl \
   -H 'Authorization: Bearer authUser' \
   --data-binary '[
     {
-      "id": 1,
+      "userId": 2,
       "fname": "Sankar",
       "lname": "Boro"
     }
