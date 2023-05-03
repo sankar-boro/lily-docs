@@ -1,0 +1,13 @@
+### Best search algorithm for full text query search
+
+The best search algorithm for full text query search depends on various factors such as the size of the data, the nature of the queries, the available hardware, and the required speed and accuracy of the search. Here are some common search algorithms used for full text query search:
+
+1. Inverted Indexing: This is a popular search algorithm used by many search engines, including Google. It involves creating an index of all the words in the document collection along with the documents that contain each word. Queries are then processed by searching the index for the relevant words and retrieving the documents that contain those words. Inverted indexing is efficient and effective for handling large datasets and complex queries.
+
+2. TF-IDF: This algorithm assigns a weight to each word in a document based on its frequency in the document and its rarity in the entire collection. Queries are then processed by computing the TF-IDF scores of each word in the query and ranking the documents based on their relevance to the query. TF-IDF is simple and effective, but it may not perform well for certain types of queries, such as phrase queries or queries that require semantic understanding.
+
+3. Phrase Query Search: This algorithm searches for exact phrases rather than individual words. It involves indexing all the phrases in the document collection and processing queries by searching for the exact phrase in the index. Phrase query search can be effective for handling queries that require exact matching of phrases, but it may be less efficient than other algorithms for handling large datasets.
+
+4. Semantic Search: This algorithm aims to understand the meaning of the query and the documents in the collection rather than just matching keywords. It involves using natural language processing techniques to extract the meaning of the query and the documents and matching them based on their semantic similarity. Semantic search can be effective for handling complex queries and datasets, but it may require significant computational resources and expertise.
+
+In general, inverted indexing is the most commonly used algorithm for full text query search because it is efficient, effective, and can handle a wide range of queries and datasets. However, the best search algorithm for a specific use case depends on the specific requirements and constraints of the search application.
