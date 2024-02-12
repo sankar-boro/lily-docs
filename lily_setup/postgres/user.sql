@@ -1,24 +1,30 @@
+use sankar;
+
 DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS userCredentials;
 
 CREATE TABLE users (
-    userId serial PRIMARY KEY,
-    fname TEXT NOT NULL,
-    lname TEXT,
-    email TEXT NOT NULL,
-    pwd TEXT NOT NULL,
-    createdAt timestamptz DEFAULT CURRENT_TIMESTAMP,
-    updatedAt timestamptz DEFAULT CURRENT_TIMESTAMP
+    userId timeuuid,
+    fname varchar,
+    lname varchar,
+    email varchar,
+    password blob,
+    createdAt timeuuid,
+    updatedAt timeuuid,
+    PRIMARY KEY (userId)
 );
 
-TRUNCATE TABLE users;
+CREATE TABLE userCredentials (
+    userId timeuuid,
+    fname varchar,
+    lname varchar,
+    email varchar,
+    password blob,
+    createdAt timeuuid,
+    updatedAt timeuuid,
+    PRIMARY KEY (email)
+);
 
+TRUNCATE TABLE sankar.users;
+TRUNCATE TABLE sankar.userCredentials;
 
-ALTER TABLE users ADD COLUMN uname tsvector;
-UPDATE users SET uname = to_tsvector(fname || ' ' || lname);
-CREATE INDEX uname_idx ON users USING GIN (uname);
-
-\d users; 
-
-SELECT fname, lname
-FROM users
-WHERE uname @@ plainto_tsquery('boro');

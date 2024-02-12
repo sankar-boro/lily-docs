@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
-BLA=$(sudo lsof -i -P -n | grep LISTEN | grep "sear" | awk '{ print $2 }')
+KILL_PROGRAM=$(sudo lsof -i -P -n | grep LISTEN | grep "sear" | awk '{ print $2 }')
 
 a=0;
 
-for i in ${BLA[@]}; do
+for i in ${KILL_PROGRAM[@]}; do
 sudo kill -9 $i
 done
 
