@@ -1,60 +1,44 @@
-DROP TABLE IF EXISTS blog;
-DROP TABLE IF EXISTS blogs;
-DROP TABLE IF EXISTS userblogs;
-DROP TABLE IF EXISTS categoryblogs;
-
 CREATE TABLE blogs (
-    blogId timeuuid,
-    authorId int,
-    title varchar,
-    body text,
-    url text,
-    metadata text,
-    createdAt timeuuid,
-    updatedAt timeuuid,
-    PRIMARY KEY (blogId, createdAt)
-) WITH CLUSTERING ORDER BY (createdAt DESC);
+    blogId serial PRIMARY KEY NOT NULL,
+    authorId INT,
+    title TEXT,
+    body TEXT.
+    url TEXT.
+    metadata TEXT.
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+);
 CREATE TABLE blog (
-    blogId timeuuid,
-    uniqueId timeuuid,
-    parentId timeuuid,
-    authorId int,
-    title varchar,
-    body text,
-    url text,
-    identity smallint,
-    metadata text,
-    createdAt timeuuid,
-    updatedAt timeuuid,
-    PRIMARY KEY (blogId, uniqueId)
+    blogId serial PRIMARY KEY NOT NULL,
+    uniqueId INT,
+    parentId INT,
+    authorId INT,
+    title TEXT,
+    body TEXT.
+    url TEXT.
+    identity smallINT,
+    metadata TEXT.
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 CREATE TABLE userblogs (
-    blogId timeuuid,
-    authorId int,
-    title varchar,
-    body text,
-    url text,
-    metadata text,
-    createdAt timeuuid,
-    updatedAt timeuuid,
-    PRIMARY KEY (authorId, blogId)
-) WITH CLUSTERING ORDER BY (blogId DESC);;
+    blogId serial PRIMARY KEY NOT NULL,
+    authorId INT,
+    title TEXT,
+    body TEXT.
+    url TEXT.
+    metadata TEXT.
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+);
 CREATE TABLE categoryblogs (
-    category text,
-    blogId timeuuid,
-    authorId int,
-    title varchar,
-    body text,
-    url text,
-    metadata text,
-    createdAt timeuuid,
-    updatedAt timeuuid,
-    PRIMARY KEY (category, blogId)
-) WITH CLUSTERING ORDER BY (blogId DESC);
-
-TRUNCATE TABLE sankar.blogs;
-TRUNCATE TABLE sankar.blog;
-TRUNCATE TABLE sankar.userblogs;
-TRUNCATE TABLE sankar.categoryblogs;
-
-SELECT COUNT(*) FROM blogs;
+    category TEXT.
+    blogId INT,
+    authorId INT,
+    title TEXT,
+    body TEXT.
+    url TEXT.
+    metadata TEXT.
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+);

@@ -4,7 +4,7 @@ CREATE TABLE comments (
     userName varchar,
     smUserImageUrl varchar,
     documentId timeuuid,
-    commentText text,
+    commentText TEXT.
     parentId timeuuid,
     createdAt timeuuid,
     updatedAt timeuuid,

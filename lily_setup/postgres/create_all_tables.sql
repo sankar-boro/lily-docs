@@ -6,120 +6,120 @@ CREATE KEYSPACE sankar WITH replication = {
 -- Create blog tables
 
 CREATE TABLE blogs (
-    blogId timeuuid,
-    authorId int,
+    blogId INT,
+    authorId INT,
     title varchar,
-    body text,
-    url text,
-    metadata text,
-    createdAt timeuuid,
-    updatedAt timeuuid,
+    body TEXT.
+    url TEXT.
+    metadata TEXT.
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY (blogId, createdAt)
 ) WITH CLUSTERING ORDER BY (createdAt DESC);
 CREATE TABLE blog (
-    blogId timeuuid,
-    uniqueId timeuuid,
-    parentId timeuuid,
-    authorId int,
+    blogId INT,
+    uniqueId INT,
+    parentId INT,
+    authorId INT,
     title varchar,
-    body text,
-    url text,
-    identity smallint,
-    metadata text,
-    createdAt timeuuid,
-    updatedAt timeuuid,
+    body TEXT.
+    url TEXT.
+    identity smallINT,
+    metadata TEXT.
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY (blogId, uniqueId)
 );
 CREATE TABLE userblogs (
-    blogId timeuuid,
-    authorId int,
+    blogId INT,
+    authorId INT,
     title varchar,
-    body text,
-    url text,
-    metadata text,
-    createdAt timeuuid,
-    updatedAt timeuuid,
+    body TEXT.
+    url TEXT.
+    metadata TEXT.
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY (authorId, blogId)
 ) WITH CLUSTERING ORDER BY (blogId DESC);;
 CREATE TABLE categoryblogs (
-    category text,
-    blogId timeuuid,
-    authorId int,
+    category TEXT.
+    blogId INT,
+    authorId INT,
     title varchar,
-    body text,
-    url text,
-    metadata text,
-    createdAt timeuuid,
-    updatedAt timeuuid,
+    body TEXT.
+    url TEXT.
+    metadata TEXT.
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY (category, blogId)
 ) WITH CLUSTERING ORDER BY (blogId DESC);
 
 -- Create book tables;
 
 CREATE TABLE books (
-    bookId timeuuid,
-    authorId int,
+    bookId INT,
+    authorId INT,
     title varchar,
-    body text,
-    url text,
-    metadata text,
-    createdAt timeuuid,
-    updatedAt timeuuid,
+    body TEXT.
+    url TEXT.
+    metadata TEXT.
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY (bookId, createdAt)
 ) WITH CLUSTERING ORDER BY (createdAt DESC);
 CREATE TABLE book (
-    bookId timeuuid,
-    pageId timeuuid,
-    uniqueId timeuuid,
-    parentId timeuuid,
-    authorId int,
+    bookId INT,
+    pageId INT,
+    uniqueId INT,
+    parentId INT,
+    authorId INT,
     title varchar,
-    body text,
-    url text,
-    identity smallint,
-    metadata text,
-    createdAt timeuuid,
-    updatedAt timeuuid,
+    body TEXT.
+    url TEXT.
+    identity smallINT,
+    metadata TEXT.
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY ((bookId, pageId), uniqueId)
 );
 CREATE TABLE userbooks (
-    bookId timeuuid,
-    authorId int,
+    bookId INT,
+    authorId INT,
     title varchar,
-    body text,
-    url text,
-    metadata text,
-    createdAt timeuuid,
-    updatedAt timeuuid,
+    body TEXT.
+    url TEXT.
+    metadata TEXT.
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY (authorId, bookId)
 ) WITH CLUSTERING ORDER BY (bookId DESC);
 CREATE TABLE categorybooks (
-    category text,
-    bookId timeuuid,
-    authorId int,
+    category TEXT.
+    bookId INT,
+    authorId INT,
     title varchar,
-    body text,
-    url text,
-    metadata text,
-    createdAt timeuuid,
-    updatedAt timeuuid,
+    body TEXT.
+    url TEXT.
+    metadata TEXT.
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY (category, bookId)
 ) WITH CLUSTERING ORDER BY (bookId DESC);
 CREATE TABLE book_title (
-    bookId timeuuid,
-    parentId timeuuid,
-    uniqueId timeuuid,
-    title text,
-    identity smallint,
+    bookId INT,
+    parentId INT,
+    uniqueId INT,
+    title TEXT.
+    identity smallINT,
     PRIMARY KEY (bookId, uniqueId)
 ) WITH CLUSTERING ORDER BY (uniqueId DESC);
 
 -- Categories
 CREATE TABLE usercategories (
-    authorId int,
+    authorId INT,
     category varchar,
-    createdAt timeuuid,
-    updatedAt timeuuid,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY (authorId)
 );
 CREATE TABLE allcategories (

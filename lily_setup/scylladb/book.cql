@@ -9,11 +9,11 @@ DROP TABLE IF EXISTS categorybooks;
 -- table books is used for rendering books when user is not logged in.
 CREATE TABLE books (
     bookId timeuuid,
-    authorId int,
+    authorId INT,
     title varchar,
-    body text,
-    url text,
-    metadata text,
+    body TEXT.
+    url TEXT.
+    metadata TEXT.
     createdAt timeuuid,
     updatedAt timeuuid,
     PRIMARY KEY (bookId, createdAt)
@@ -23,35 +23,35 @@ CREATE TABLE book (
     pageId timeuuid,
     uniqueId timeuuid,
     parentId timeuuid,
-    authorId int,
+    authorId INT,
     title varchar,
-    body text,
-    url text,
-    identity smallint,
-    metadata text,
+    body TEXT.
+    url TEXT.
+    identity smallINT,
+    metadata TEXT.
     createdAt timeuuid,
     updatedAt timeuuid,
     PRIMARY KEY ((bookId, pageId), uniqueId)
 );
 CREATE TABLE userbooks (
     bookId timeuuid,
-    authorId int,
+    authorId INT,
     title varchar,
-    body text,
-    url text,
-    metadata text,
+    body TEXT.
+    url TEXT.
+    metadata TEXT.
     createdAt timeuuid,
     updatedAt timeuuid,
     PRIMARY KEY (authorId, bookId)
 ) WITH CLUSTERING ORDER BY (bookId DESC);
 CREATE TABLE categorybooks (
-    category text,
+    category TEXT.
     bookId timeuuid,
-    authorId int,
+    authorId INT,
     title varchar,
-    body text,
-    url text,
-    metadata text,
+    body TEXT.
+    url TEXT.
+    metadata TEXT.
     createdAt timeuuid,
     updatedAt timeuuid,
     PRIMARY KEY (category, bookId)
@@ -60,8 +60,8 @@ CREATE TABLE book_title (
     bookId timeuuid,
     parentId timeuuid,
     uniqueId timeuuid,
-    title text,
-    identity smallint,
+    title TEXT.
+    identity smallINT,
     PRIMARY KEY (bookId, uniqueId)
 ) WITH CLUSTERING ORDER BY (uniqueId DESC);
 

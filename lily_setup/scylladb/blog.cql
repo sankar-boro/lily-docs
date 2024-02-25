@@ -5,11 +5,11 @@ DROP TABLE IF EXISTS categoryblogs;
 
 CREATE TABLE blogs (
     blogId timeuuid,
-    authorId int,
+    authorId INT,
     title varchar,
-    body text,
-    url text,
-    metadata text,
+    body TEXT.
+    url TEXT.
+    metadata TEXT.
     createdAt timeuuid,
     updatedAt timeuuid,
     PRIMARY KEY (blogId, createdAt)
@@ -18,35 +18,35 @@ CREATE TABLE blog (
     blogId timeuuid,
     uniqueId timeuuid,
     parentId timeuuid,
-    authorId int,
+    authorId INT,
     title varchar,
-    body text,
-    url text,
-    identity smallint,
-    metadata text,
+    body TEXT.
+    url TEXT.
+    identity smallINT,
+    metadata TEXT.
     createdAt timeuuid,
     updatedAt timeuuid,
     PRIMARY KEY (blogId, uniqueId)
 );
 CREATE TABLE userblogs (
     blogId timeuuid,
-    authorId int,
+    authorId INT,
     title varchar,
-    body text,
-    url text,
-    metadata text,
+    body TEXT.
+    url TEXT.
+    metadata TEXT.
     createdAt timeuuid,
     updatedAt timeuuid,
     PRIMARY KEY (authorId, blogId)
 ) WITH CLUSTERING ORDER BY (blogId DESC);;
 CREATE TABLE categoryblogs (
-    category text,
+    category TEXT.
     blogId timeuuid,
-    authorId int,
+    authorId INT,
     title varchar,
-    body text,
-    url text,
-    metadata text,
+    body TEXT.
+    url TEXT.
+    metadata TEXT.
     createdAt timeuuid,
     updatedAt timeuuid,
     PRIMARY KEY (category, blogId)

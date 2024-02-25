@@ -3,9 +3,9 @@ use sankar;
 DROP TABLE IF EXISTS userbooksettings;
 
 CREATE TABLE userbooksettings (
-    authorId int,
+    authorId INT,
     bookId timeuuid,
-    settings text,
+    settings TEXT.
     PRIMARY KEY (authorId, bookId)
 );
 

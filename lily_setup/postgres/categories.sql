@@ -2,18 +2,16 @@ use sankar;
 DROP TABLE IF EXISTS usercategories;
 DROP TABLE IF EXISTS allcategories;
 CREATE TABLE usercategories (
-    authorId int,
-    category varchar,
-    createdAt timeuuid,
-    updatedAt timeuuid,
-    PRIMARY KEY (authorId, category)
+    authorId INT,
+    category TEXT,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 CREATE TABLE allcategories (
-    category varchar,
-    authorId varchar,
-    createdAt timeuuid,
-    updatedAt timeuuid,
-    PRIMARY KEY (category)
+    category TEXT,
+    authorId TEXT,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 INSERT INTO sankar.allcategories (category, division) VALUES('science', 'demo');
 INSERT INTO sankar.allcategories (category, division) VALUES('physics', 'demo');

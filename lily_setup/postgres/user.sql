@@ -4,24 +4,24 @@ DROP TABLE IF EXISTS users;
 DROP TABLE IF EXISTS userCredentials;
 
 CREATE TABLE users (
-    userId timeuuid,
-    fname varchar,
-    lname varchar,
-    email varchar,
+    userId INT,
+    fname TEXT,
+    lname TEXT,
+    email TEXT,
     password blob,
-    createdAt timeuuid,
-    updatedAt timeuuid,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY (userId)
 );
 
 CREATE TABLE userCredentials (
-    userId timeuuid,
-    fname varchar,
-    lname varchar,
-    email varchar,
+    userId INT,
+    fname TEXT,
+    lname TEXT,
+    email TEXT,
     password blob,
-    createdAt timeuuid,
-    updatedAt timeuuid,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY (email)
 );
 
