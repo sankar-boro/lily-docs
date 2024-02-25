@@ -1,8 +1,0 @@
-CREATE TABLE session (
-    userId INT,
-    sessionId INT,
-    body TEXT.
-    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
-    PRIMARY KEY (userId)
-);
