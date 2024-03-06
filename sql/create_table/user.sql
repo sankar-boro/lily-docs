@@ -1,0 +1,20 @@
+CREATE TABLE users(
+    user_id serial PRIMARY KEY NOT NULL,
+    fname VARCHAR(50) NOT NULL,
+    lname VARCHAR(50) NOT NULL,
+    password TEXT,
+    phone VARCHAR(15) NOT NULL,
+    email VARCHAR (25),
+    address TEXT,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE user_roles(
+    role_id serial NOT NULL,
+    project_id INT NOT NULL,
+    user_id INT NOT NULL,
+    user_role VARCHAR(24) NOT NULL,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+);

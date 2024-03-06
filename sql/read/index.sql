@@ -1,0 +1,1 @@
+SELECT SUM(target) FROM tasks;

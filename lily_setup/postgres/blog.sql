@@ -1,21 +1,20 @@
 CREATE TABLE blogs (
-    blogId serial PRIMARY KEY NOT NULL,
-    authorId INT,
+    blog_id serial PRIMARY KEY NOT NULL,
+    author_id INT,
     title TEXT,
     body TEXT,
-    url TEXT,
+    images TEXT,
     metadata TEXT,
     created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 CREATE TABLE blog (
-    blogId serial PRIMARY KEY NOT NULL,
-    uniqueId INT,
-    parentId INT,
-    authorId INT,
+    uid serial PRIMARY KEY NOT NULL,
+    blog_id INT,
+    parent_id INT,
     title TEXT,
     body TEXT,
-    url TEXT,
+    images TEXT,
     identity smallINT,
     metadata TEXT,
     created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,

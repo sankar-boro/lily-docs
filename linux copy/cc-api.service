@@ -1,0 +1,25 @@
+[Unit]
+Description=*****
+Documentation=*****
+
+[Service]
+ExecStart=<bin-path> <file-name>
+Restart=always
+User=*****
+Group=*****
+Environment=NODE_ENV=production
+Environment=SECRET_KEY=*****
+Environment=PG_USER=*****
+Environment=PG_HOST=*****
+Environment=PG_DATABASE=*****
+Environment=PG_PASSWORD=*****
+Environment=PG_PORT=*****
+Environment=PORT=*****
+WorkingDirectory=*****
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=*****
+
+[Install]
+WantedBy=multi-user.target
+
