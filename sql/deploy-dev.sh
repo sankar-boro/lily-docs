@@ -16,7 +16,7 @@ permission=$PWD/sql/create_table/permission.sql
 vendorAndContractor=$PWD/sql/create_table/vendorAndContractor.sql
 attendance=$PWD/sql/create_table/attendance.sql
 
-psql -h localhost -U cloudcivildev -d cloudcivildev \
+psql -h localhost -U sankardev -d sankardev \
 -f $asset \
 -f $expense \
 -f $organization \
