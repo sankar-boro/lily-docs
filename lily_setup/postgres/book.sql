@@ -11,6 +11,7 @@ CREATE TABLE books (
 CREATE TABLE book (
     uid serial PRIMARY KEY NOT NULL,
     book_id INT,
+    page_id INT, -- page_id is required to show all nodes of a page
     parent_id INT,
     title TEXT,
     body TEXT,
